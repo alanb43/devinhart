@@ -2,6 +2,8 @@
 
 import math
 
+from typing import override
+
 class Shape:
 
     def area(self): #this gets overridden in each subclass
@@ -15,6 +17,7 @@ class Rectangle(Shape):
         self.width = _width
         self.height = _height
 
+    @override 
     def area (self):
         return self.width * self.height
     
@@ -24,6 +27,7 @@ class Circle(Shape):
     def __init__(self, _radius: float):
         self.radius = _radius
 
+    @override
     def area(self):
         return self.radius ** 2 * math.pi
     
@@ -35,6 +39,7 @@ class Triangle(Shape):
         self.base = _base
         self.height = _height
     
+    @override
     def area(self):
         return self.base * self.height * 0.5
     
